@@ -20,6 +20,10 @@ const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(process
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
+app.get("/hello", (req, res) => {
+    res.send("hello world");
+});
+
 app.post("/get-resources", async (req, res) => {
     const formData = req.body;
     // console.log(formData);
