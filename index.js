@@ -11,7 +11,12 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 app.use(bodyParser.json());
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+    origin: "https://bucolic-faun-0a281f.netlify.app",
+    methods: ["GET", "POST"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+}));
 app.use(express.json());
 
 const PORT = process.env.PORT || 5000;
